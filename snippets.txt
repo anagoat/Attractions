@@ -1,0 +1,303 @@
+
+{
+    "React setState method with object": {
+        "prefix": "sst",
+        "body": [
+            "this.setState({$0});"
+        ],
+        "description": "Create React setState method with object as an argument"
+    },
+    "React setState method with function": {
+        "prefix": "ssf",
+        "body": [
+            "this.setState((prevState, prevProps) => ({",
+            "    $0",
+            "}));"
+        ],
+        "description": "Create React setState method with function as an argument"
+    },
+    "React Class Declaration": {
+        "prefix": "rcc",
+        "body": [
+            "import React, { Component } from 'react';",
+            "",
+            "import './${1:$TM_FILENAME_BASE}.scss';",
+            "",
+            "class ${1:$TM_FILENAME_BASE} extends Component {",
+            "    state = {",
+            "        $2",
+            "    }",
+            "",
+            "    render() {",
+            "        return (",
+            "            <div className=\"${1:$TM_FILENAME_BASE}\">",
+            "                $0",
+            "            </div>",
+            "        );",
+            "    }",
+            "}",
+            "",
+            "export default ${1:$TM_FILENAME_BASE};"
+        ],
+        "description": "Create a React Class declaration with .scss file import and a default export statement"
+    },
+    "React Class Declaration with PropTypes": {
+        "prefix": "rcp",
+        "body": [
+            "import React, { Component } from 'react';",
+            "import PropTypes from 'prop-types';",
+            "",
+            "import './${1:$TM_FILENAME_BASE}.scss';",
+            "",
+            "class ${1:$TM_FILENAME_BASE} extends Component {",
+            "    state = {",
+            "        $2",
+            "    }",
+            "",
+            "    render() {",
+            "        return (",
+            "            <div className=\"${1:$TM_FILENAME_BASE}\">",
+            "                $3",
+            "            </div>",
+            "        );",
+            "    }",
+            "}",
+            "",
+            "${1:$TM_FILENAME_BASE}.propTypes = {",
+            "    $0",
+            "};",
+            "",
+            "export default ${1:$TM_FILENAME_BASE};"
+        ],
+        "description": "Create a React Class declaration with PropTypes, .scss file import and a default export statement"
+    },
+    "React Function Declaration": {
+        "prefix": "rsc",
+        "body": [
+            "import React from 'react';",
+            "",
+            "import './${1:$TM_FILENAME_BASE}.scss';",
+            "",
+            "const ${1:$TM_FILENAME_BASE} = ($2) => {",
+            "    return (",
+            "        <div className=\"${1:$TM_FILENAME_BASE}\">",
+            "            $0",
+            "        </div>",
+            "    );",
+            "};",
+            "",
+            "export default ${1:$TM_FILENAME_BASE};"
+        ],
+        "description": "Create a React Function declaration with .scss file import and a default export statement"
+    },
+    "React Function Declaration with PropTypes": {
+        "prefix": "rsp",
+        "body": [
+            "import React from 'react';",
+            "import PropTypes from 'prop-types';",
+            "",
+            "import './${1:$TM_FILENAME_BASE}.scss';",
+            "",
+            "const ${1:$TM_FILENAME_BASE} = ($2) => {",
+            "    return (",
+            "        <div className=\"${1:$TM_FILENAME_BASE}\">",
+            "            $3",
+            "        </div>",
+            "    );",
+            "};",
+            "",
+            "${1:$TM_FILENAME_BASE}.propTypes = {",
+            "    $0",
+            "};",
+            "",
+            "export default ${1:$TM_FILENAME_BASE};"
+        ],
+        "description": "Create a React Function declaration with .scss file import and a default export statement"
+    },
+    "ES6 Class Definition": {
+        "prefix": "cls",
+        "body": [
+            "import './${1:$TM_FILENAME_BASE}.scss';",
+            "",
+            "class ${1:$TM_FILENAME_BASE} {",
+            "    constructor() {",
+            "        this.${2:${TM_FILENAME_BASE/(.*)/${1:/downcase}/}} = document.createElement('${0:div}');",
+            "",
+            "        this.${2:${TM_FILENAME_BASE/(.*)/${1:/downcase}/}}.className = '${1:$TM_FILENAME_BASE}';",
+            "",
+            "        return this.${2:${TM_FILENAME_BASE/(.*)/${1:/downcase}/}};",
+            "    }",
+            "}",
+            "",
+            "export default ${1:$TM_FILENAME_BASE};"
+        ],
+        "description": "Create a new ES6 Class with a constructor, .scss file import and default export statements"
+    },
+    "console.log with a variable's name": {
+        "prefix": "clg",
+        "body": [
+            "console.log('[$1]', $1);"
+        ],
+        "description": "Create expanded console.log function with variable's name"
+    },
+    "Simple console.log": {
+        "prefix": "cl",
+        "body": [
+            "console.log($0);"
+        ],
+        "description": "Create simple console.log function"
+    },
+    "Simple console.warn": {
+        "prefix": "clw",
+        "body": [
+            "console.warn($0);"
+        ],
+        "description": "Create simple console.warn function"
+    },
+    "CommonJS require function snippet": {
+        "prefix": "req",
+        "body": [
+            "const ${1:module} = require('${2:path}');"
+        ]
+    },
+    "CommonJS module.exports statement": {
+        "prefix": "mex",
+        "body": [
+            "module.exports = {",
+            "    $0",
+            "};"
+        ]
+    },
+    "React-Redux mapStateToProps function": {
+        "prefix": "msp",
+        "body": [
+            "const mapStateToProps = state => {",
+            "    return {",
+            "        $0",
+            "    };",
+            "};"
+        ],
+        "description": "Create React-Redux mapStateToProps arrow function"
+    },
+    "React-Redux mapDispatchToProps function": {
+        "prefix": "mdp",
+        "body": [
+            "const mapDispatchToProps = dispatch => {",
+            "    return {",
+            "        ${1:functionName}: () => dispatch(${0:actionName})",
+            "    };",
+            "};"
+        ],
+        "description": "Create React-Redux mapDispatchToProps arrow function"
+    },
+    "React-Redux mapDispatchToProps object": {
+        "prefix": "mdo",
+        "body": [
+            "const mapDispatchToProps = {",
+            "    ${0:functionName}",
+            "};"
+        ],
+        "description": "Create React-Redux mapDispatchToProps arrow function"
+    },
+    "PropTypes assignment": {
+        "prefix": "pt",
+        "body": [
+            "${1:$TM_FILENAME_BASE}.propTypes = {",
+            "    $0",
+            "};"
+        ],
+        "description": "Create PropTypes assignment"
+    },
+    "PropTypes import statement": {
+        "prefix": "ipt",
+        "body": [
+            "import PropTypes from 'prop-types';"
+        ],
+        "description": "Create PropTypes import statement"
+    },
+    "React-Redux connect function import": {
+        "prefix": "imc",
+        "body": [
+            "import { ${0:connect} } from 'react-redux';"
+        ],
+        "description": "Create React-Redux connect function import"
+    },
+    "React-Redux connect function": {
+        "prefix": "cnc",
+        "body": [
+            "const mapStateToProps = state => {",
+                "    return {",
+                "        $1",
+                "    };",
+            "};",
+            "",
+            "const mapDispatchToProps = {",
+                "    $2",
+            "};",
+            "",
+            "export default connect(",
+            "    ${3:mapStateToProps},",
+            "    ${4:mapDispatchToProps}",
+            ")(${0:$TM_FILENAME_BASE});"
+        ],
+        "description": "Create React-Redux export default connect function with mapStateToProps and mapDispatchToProps functions"
+    },
+    "React useState Hook": {
+        "prefix": "ust",
+        "body": [
+            "const [${1:state}, ${2:setState}] = useState(${0:initialState});"
+        ],
+        "description": "Create React useState Hook with a destructuring"
+    },
+    "React useEffect Hook": {
+        "prefix": "uef",
+        "body": [
+            "useEffect(() => {",
+            "    $0",
+            "}, [$1]);"
+        ],
+        "description": "Create React useEffect Hook without any dependencies"
+    },
+    "Standard document.createElement method": {
+        "prefix": "ce",
+        "body": [
+            "const ${1:element} = document.createElement('${0:tag}');"
+        ],
+        "description": "Create standard JavaScript document.createElement method and assign it's result to constant"
+    },
+    "Standard querySelector method": {
+        "prefix": "qs",
+        "body": [
+            "const ${1:element} = ${0:document}.querySelector('${2:selector}');"
+        ],
+        "description": "Create standard JavaScript querySelector method and assign it's result to constant"
+    },
+    "Default import statement": {
+        "prefix": "imp",
+        "body": [
+            "import ${0:module} from '${1:path}';"
+        ],
+        "description": "Create default import statement"
+    },
+    "Named import statement": {
+        "prefix": "imd",
+        "body": [
+            "import { ${0:module} } from '${1:path}';"
+        ],
+        "description": "Create named import statement"
+    },
+    "Everything import statement": {
+        "prefix": "ime",
+        "body": [
+            "import * as ${0:object} from '${1:path}';"
+        ],
+        "description": "Create everything import statement"
+    },
+    "Empty import statement": {
+        "prefix": "imn",
+        "body": [
+            "import '${0:path}';"
+        ],
+        "description": "Create import statement without variable"
+    }
+}
