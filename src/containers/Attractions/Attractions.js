@@ -13,6 +13,24 @@ class Attractions extends Component {
             <div className="Attractions">
                 Attractions
                 <Attraction />
+                <Attraction />
+                <Attraction />
+                <Attraction />
+                <Attraction />
+                <Attraction />
+                <Attraction />
+                <Attraction />
+                <Attraction />
+                <Attraction />
+                <Attraction />
+                <Attraction />
+                <Attraction />
+                <Attraction />
+                <Attraction />
+                <Attraction />
+                <Attraction />
+                <Attraction />
+                <Attraction />
             </div>
         );
     }

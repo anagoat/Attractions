@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 
 import './Attraction.scss';
+// import attractionData from '../../assets/data/products.json';
+
 
 class Attraction extends Component {
     state = {
@@ -19,3 +21,4 @@ class Attraction extends Component {
 }
 
 export default Attraction;
+
