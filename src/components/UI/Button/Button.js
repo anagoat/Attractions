@@ -9,9 +9,9 @@ class Button extends Component {
 
     render() {
         return (
-            <div className="Button">
+            <button className="Button">
                 Button
-            </div>
+            </button>
         );
     }
 }
