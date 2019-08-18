@@ -3,17 +3,21 @@ import PropTypes from 'prop-types';
 
 import './Input.scss';
 
-const Input = ({ type = 'text', placeholder }) => (
+const Input = ({ type = 'text', placeholder, value, onChangeHandler }) => (
         <input 
             className="Input"
             type={type}
             placeholder={placeholder}
-            value=''
+            value={value}
+            onChange={onChangeHandler}
          />
 )
 
 Input.propTypes = {
-    placegolder: PropTypes.string, 
+    type: PropTypes.string, 
+    placeholder : PropTypes.string.isRequired,
+    value: PropTypes.string.isRequired,
+    onChangeHandler:PropTypes.func.isRequired
 };
 
 export default Input;

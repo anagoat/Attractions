@@ -1,10 +1,10 @@
 .Attractions {
     background-color: rgb(167, 177, 158);
     display: flex;
-    margin-left: 300px;
     height: 100%;
-    width: calc(100% - 300px);
+    width: calc(100% - 250px);
     flex-direction: column;
-    position: absolute;
+    position: relative;
     align-content: space-between;
+    padding: 15px;
 }

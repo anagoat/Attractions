@@ -1,5 +1,12 @@
-.Button {
-    border: 1px solid black;
+ .Button {
+    border: 2px solid black;
     padding: 15px;
     margin: 0;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: border-radius 200ms ease;
+
+    &:hover {
+        border-radius: 25px
+    }
 }

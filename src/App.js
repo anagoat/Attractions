@@ -3,23 +3,61 @@ import './App.scss';
 // import PropTypes from 'prop-types';
 
 import Toolbar from './components/Toolbar/Toolbar';
-import Attractions from './containers/Attractions/Attractions';
-import Sidebar from './containers/Sidebar/Sidebar';
+import Attractions from './components/Attractions/Attractions';
+import Sidebar from './components/Sidebar/Sidebar';
+import attractionsData from './assets/data/attractions.json';
+// import Spinner from './components/UI/Spinner/Spinner';
 
 class App extends Component {
-    constructor (props) {
-        super(props)
-
-        this.state = {
-            searchField: ''
-        }
+    state = {
+        searchField: '',
+        isOpen: false,
+        attractionsList: null,
+        isFetching: false
     }
+
+    onChangeHandler = event => {
+        this.setState({ searchField:  event.target.value });
+    }
+
+    fetchShowplaceHandler = () => {
+        this.setState(( prevState ) => ({
+            isFetching: !prevState.isFetching
+
+        }));
+
+        const attractionsList = attractionsData;
+
+        setTimeout(() => {
+            this.setState(( prevState ) => ({
+                attractionsList: attractionsList,
+                isFetching: !prevState.isFetching
+    
+            })); 
+        }, 100);
+
+    }
+
     render () {
+        const { searchField, isFetching, attractionsList } = this.state;
+
         return ( 
             <div className="App">
-            <Toolbar search = {this.state.searchField} />
-            <Attractions />
-            <Sidebar />
+            <Toolbar 
+                search = {searchField}
+                isFetching={isFetching}
+                changed={this.onChangeHandler}
+                clicked={this.fetchShowplaceHandler}
+            />
+
+              <Sidebar 
+                attractionsList={attractionsList}
+            />
+
+            <Attractions
+                attractionsList={attractionsList}
+                isFetching={isFetching}
+            />
         </div>
         )
     }
