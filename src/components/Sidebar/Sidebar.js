@@ -6,14 +6,15 @@ import Spinner from '../UI/Spinner/Spinner';
 
 
 
-const Sidebar = ( { attractionsList, isFetching } ) => {
-    console.log('[attractionsList]', attractionsList);
+const Sidebar = ( { attractionsList, isFetching} ) => {
     const country = attractionsList ? attractionsList.map(attraction => (
+        
         // eslint-disable-next-line react/jsx-pascal-case
         <Сountry 
             key={attraction.id}
-            country={attraction.name}
-        />
+            country={attraction.country}
+            >
+        </Сountry>
         )): null;
          
 return (

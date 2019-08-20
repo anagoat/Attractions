@@ -2,7 +2,6 @@
     {
         "country": "Исландия",
         "flag" : "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Flag_of_Iceland.svg/2000px-Flag_of_Iceland.svg.png",
-        "id": 1,
         "attractions" : 
                 [{
                     "id": 1,
@@ -50,7 +49,6 @@
     {
         "country": "Норвегия",
         "flag" : "https://upload.wikimedia.org/wikipedia/commons/d/d9/Flag_of_Norway.svg",
-        "id": 2,
         "attractions" : 
             [{
                     "id": 1,
@@ -98,7 +96,6 @@
     {
         "country": "Канада",
         "flag" : "https://upload.wikimedia.org/wikipedia/commons/c/cf/Flag_of_Canada.svg",
-        "id": 3,
         "attractions" : 
             [{
                     "id": 1,

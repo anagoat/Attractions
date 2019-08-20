@@ -13,17 +13,17 @@ class App extends Component {
         searchField: '',
         isOpen: false,
         attractionsList: null,
-        isFetching: false
+        isFetching: false,
+        country: ''
     }
 
     onChangeHandler = event => {
-        this.setState({ searchField:  event.target.value });
+        this.setState({ searchField: event.target.value });
     }
 
     fetchShowplaceHandler = () => {
         this.setState(( prevState ) => ({
             isFetching: !prevState.isFetching
-
         }));
 
         const attractionsList = attractionsData;
@@ -39,7 +39,7 @@ class App extends Component {
     }
 
     render () {
-        const { searchField, isFetching, attractionsList } = this.state;
+        const { searchField, isFetching, attractionsList} = this.state;
 
         return ( 
             <div className="App">
@@ -50,13 +50,12 @@ class App extends Component {
                 clicked={this.fetchShowplaceHandler}
             />
 
-              <Sidebar 
+            <Sidebar 
                 attractionsList={attractionsList}
             />
 
             <Attractions
                 attractionsList={attractionsList}
-                isFetching={isFetching}
             />
         </div>
         )

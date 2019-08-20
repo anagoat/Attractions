@@ -1,12 +1,11 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 import './Attraction.scss';
 import Button from '../../UI/Button/Button';
 
 const Attraction = ( { attractionsList } ) => {
-    const { name, description, picture, shortDescription  } = attractionsList;
-    console.log('[attractions]', attractionsList);
+    const [ {name}, {description}, {picture}, {shortDescription} ] = attractionsList;
 
     return (
         <div className="Attraction">
@@ -23,8 +22,9 @@ const Attraction = ( { attractionsList } ) => {
     );
 };
 
-// Attraction.propTypes = {
-    
-// };
+Attraction.propTypes = {
+    attractionsList: PropTypes.array
+};
 
 export default Attraction;
+
