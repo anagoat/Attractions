@@ -1,20 +1,19 @@
 import React, { Component } from 'react';
 import './App.scss';
-// import PropTypes from 'prop-types';
+import  { Route } from 'react-router-dom';
 
 import Toolbar from './components/Toolbar/Toolbar';
 import Attractions from './components/Attractions/Attractions';
 import Sidebar from './components/Sidebar/Sidebar';
 import attractionsData from './assets/data/attractions.json';
-// import Spinner from './components/UI/Spinner/Spinner';
+import Footer from './components/Footer/Footer';
 
 class App extends Component {
     state = {
         searchField: '',
         isOpen: false,
         attractionsList: null,
-        isFetching: false,
-        country: ''
+        isFetching: false
     }
 
     onChangeHandler = event => {
@@ -57,13 +56,23 @@ class App extends Component {
             <Attractions
                 attractionsList={attractionsList}
             />
+
+            <Route path="/" render={() => (
+                <Sidebar 
+                attractionsList={attractionsList}
+                />
+            )}/>
+
+            <Footer />
         </div>
         )
     }
 }
 
 
-// App.propTypes = {
-// };
-
 export default App;
+
+
+// yarn add react-router-dom
+// npm i -g yarn
+// yarn add node-sass -D
