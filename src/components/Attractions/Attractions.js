@@ -6,14 +6,13 @@ import Attraction from './Attraction/Attraction';
 import './Attractions.scss';
 
 const Attractions = ({ attractionsList, isFetching }) => {
-    // console.log('[attractionsList]', attractionsList);
         const attractions = attractionsList ? attractionsList.map(attraction => (
             <Attraction 
                 key={attraction.id}
                 attractionsList={attraction.attractions}
             />
             )): null;
-             
+            
     return (
         <div className="Attractions">
             { isFetching && <Spinner /> }

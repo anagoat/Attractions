@@ -55,13 +55,11 @@ class App extends Component {
 
             <Attractions
                 attractionsList={attractionsList}
+                isFetching={isFetching}
             />
-
-            <Route path="/" render={() => (
-                <Sidebar 
-                attractionsList={attractionsList}
-                />
-            )}/>
+{/* 
+            <Route path="/iceland" render={() => (
+            )}/> */}
 
             <Footer />
         </div>

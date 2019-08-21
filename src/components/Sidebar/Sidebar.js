@@ -13,6 +13,7 @@ const Sidebar = ( { attractionsList, isFetching} ) => {
         <Сountry 
             key={attraction.id}
             country={attraction.country}
+            flag={attraction.flag}
             >
         </Сountry>
         )): null;

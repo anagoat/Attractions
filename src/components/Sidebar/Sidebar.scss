@@ -1,7 +1,17 @@
 .Sidebar {
-    background-color: rgb(210, 228, 47);
+    background-image: linear-gradient(to top, rgb(248, 181, 35), rgb(122, 224, 122));
     width: 250px;
     display: flex;
     padding: 15px;
     flex-direction: column;
+    border: 1px solid black;
+    box-shadow: 2px 5px 5px rgb(35, 38, 39);
+    margin: 15px;
+    text-align: center;
+    font-size: 1.2rem;
+    justify-content: flex-start;
+    align-items: flex-start;
+    border-radius: 25px;
+
+
 }
