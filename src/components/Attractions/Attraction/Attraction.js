@@ -4,19 +4,20 @@ import PropTypes from 'prop-types';
 import './Attraction.scss';
 import Button from '../../UI/Button/Button';
 
-const Attraction = ( { attractionsList } ) => {
+const Attraction = ( { attractionsList, countries } ) => {
     const [ {name}, {description}, {picture}, {shortDescription} ] = attractionsList;
+    const { country, countryRu, flag, descriptionCountry } = countries;
 
     return (
         <div className="Attraction">
-            <h1>{name}</h1>
+            <h1>{countryRu}</h1>
 
             <div className="attractionContent">
                 <div className="ImageWrapper">
-                    <img src={picture} alt={shortDescription} />
+                    <img src={flag} alt={descriptionCountry} />
                 </div>
             </div>
-            <p>{description}</p>
+            <p>{descriptionCountry}</p>
                 <Button>read more </Button>
         </div>
     );

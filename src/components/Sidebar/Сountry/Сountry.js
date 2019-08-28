@@ -10,9 +10,7 @@ const Сountry = ({country, flag}) => {
     return (
         <div className="Сountry">
             <ul>
-            {/* <p><a href={flag}>{country}</a></p> */}
-            <l1><Link to="/iceland"><img className="Flag" src={flag} alt="ollo"/>{country}</Link></l1>
-
+            <li><Link to={'/'+ country}><img className="Flag" src={flag} alt="ollo"/><p>{country}</p></Link></li>
             </ul>
         </div>
     );

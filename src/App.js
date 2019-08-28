@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import './App.scss';
-import  { Route } from 'react-router-dom';
+// import  { withRouter } from 'react-router-dom';
 
 import Toolbar from './components/Toolbar/Toolbar';
 import Attractions from './components/Attractions/Attractions';
 import Sidebar from './components/Sidebar/Sidebar';
 import attractionsData from './assets/data/attractions.json';
 import Footer from './components/Footer/Footer';
+// import wrapper from './hoc/wrapper';
 
 class App extends Component {
     state = {
@@ -68,7 +69,8 @@ class App extends Component {
 }
 
 
-export default App;
+// export default withRouter(wrapper(App));
+export default (App);
 
 
 // yarn add react-router-dom
