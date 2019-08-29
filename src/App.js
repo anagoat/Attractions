@@ -13,9 +13,12 @@ class App extends Component {
         searchField: '',
         isOpen: false,
         attractionsList: null,
-        isFetching: false
+        isFetching: false,
+        a:null
     }
-
+    func = () => {
+        this.setState({a: this.props.location.search}) ;
+    }
     onChangeHandler = event => {
         this.setState({ searchField: event.target.value });
     }
@@ -38,7 +41,7 @@ class App extends Component {
     }
 
     render () {
-        const { searchField, isFetching, attractionsList} = this.state;
+        const { searchField, isFetching, attractionsList, a} = this.state;
 
         return ( 
             <div className="App">
@@ -58,14 +61,14 @@ class App extends Component {
                 isFetching={isFetching}
             /> */}
 
-            <Route path="/Канада" render={ () => (
+            <Route path="/:id" render={ () => (
                 <Attractions
                     attractionsList={attractionsList}
                     isFetching={isFetching}
+                    a={a}
                 />
             )}
             /> 
-
             <Footer />
         </div>
         )

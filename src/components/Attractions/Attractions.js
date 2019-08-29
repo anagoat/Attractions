@@ -5,8 +5,8 @@ import Spinner from '../UI/Spinner/Spinner';
 import Attraction from './Attraction/Attraction';
 import './Attractions.scss';
 
-const Attractions = ({ attractionsList, isFetching }) => {
-    console.log('[this]', this);
+const Attractions = ({ attractionsList, isFetching, a }) => {
+    console.log('[a]', a);
     console.log('[attractionsList]', attractionsList);
         const attractions = attractionsList ? attractionsList.map(attraction => (
             <Attraction 
