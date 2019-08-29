@@ -6,6 +6,7 @@ import Attraction from './Attraction/Attraction';
 import './Attractions.scss';
 
 const Attractions = ({ attractionsList, isFetching }) => {
+    console.log('[this]', this);
     console.log('[attractionsList]', attractionsList);
         const attractions = attractionsList ? attractionsList.map(attraction => (
             <Attraction 

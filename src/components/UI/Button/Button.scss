@@ -2,10 +2,13 @@
     border: 2px solid black;
     padding: 15px;
     margin: 0;
-    font-size: 1rem;
+    font-size: 1.2rem;
     cursor: pointer;
     transition: border-radius 200ms ease;
-
+    color: rgb(238, 163, 24);
+    background-image: linear-gradient(to top, rgb(197, 159, 159), white);
+    border-radius: 10px;
+    
     &:hover {
         border-radius: 25px
     }

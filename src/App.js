@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import './App.scss';
-// import  { withRouter } from 'react-router-dom';
+import  { Route } from 'react-router-dom';
 
 import Toolbar from './components/Toolbar/Toolbar';
 import Attractions from './components/Attractions/Attractions';
 import Sidebar from './components/Sidebar/Sidebar';
 import attractionsData from './assets/data/attractions.json';
 import Footer from './components/Footer/Footer';
-// import wrapper from './hoc/wrapper';
 
 class App extends Component {
     state = {
@@ -53,14 +52,19 @@ class App extends Component {
             <Sidebar 
                 attractionsList={attractionsList}
             />
-
+{/* 
             <Attractions
                 attractionsList={attractionsList}
                 isFetching={isFetching}
-            />
-{/* 
-            <Route path="/iceland" render={() => (
-            )}/> */}
+            /> */}
+
+            <Route path="/Канада" render={ () => (
+                <Attractions
+                    attractionsList={attractionsList}
+                    isFetching={isFetching}
+                />
+            )}
+            /> 
 
             <Footer />
         </div>
@@ -76,3 +80,6 @@ export default (App);
 // yarn add react-router-dom
 // npm i -g yarn
 // yarn add node-sass -D
+// yarn add redux
+// https://maxfarseer.gitbooks.io/react-router-course-ru/content/dopisivaem_routi.html
+// хорошая статья про роутер

@@ -18,7 +18,7 @@ const Attraction = ( { attractionsList, countries } ) => {
                 </div>
             </div>
             <p>{descriptionCountry}</p>
-                <Button>read more </Button>
+                <Button>read more</Button>
         </div>
     );
 };
