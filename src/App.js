@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.scss';
-import  { Route } from 'react-router-dom';
+import  { Route, Switch } from 'react-router-dom';
 
 import Toolbar from './components/Toolbar/Toolbar';
 import Attractions from './components/Attractions/Attractions';
@@ -9,16 +9,17 @@ import attractionsData from './assets/data/attractions.json';
 import Footer from './components/Footer/Footer';
 
 class App extends Component {
-    state = {
+    constructor(props) {
+        super(props);
+
+        this.state = {
         searchField: '',
         isOpen: false,
-        attractionsList: null,
+        attractionsList: attractionsData,
         isFetching: false,
-        a:null
     }
-    func = () => {
-        this.setState({a: this.props.location.search}) ;
-    }
+}
+
     onChangeHandler = event => {
         this.setState({ searchField: event.target.value });
     }
@@ -41,7 +42,7 @@ class App extends Component {
     }
 
     render () {
-        const { searchField, isFetching, attractionsList, a} = this.state;
+        const { searchField, isFetching, attractionsList} = this.state;
 
         return ( 
             <div className="App">
@@ -52,23 +53,26 @@ class App extends Component {
                 clicked={this.fetchShowplaceHandler}
             />
 
-            <Sidebar 
-                attractionsList={attractionsList}
-            />
-{/* 
-            <Attractions
-                attractionsList={attractionsList}
-                isFetching={isFetching}
-            /> */}
+            <Sidebar  attractionsList={attractionsList} />
 
-            <Route path="/:id" render={ () => (
-                <Attractions
+            <Switch>
+            {/* <Route path="" extend render={props => (
+                    <Attractions 
+                    {...props}
                     attractionsList={attractionsList}
                     isFetching={isFetching}
-                    a={a}
-                />
-            )}
-            /> 
+                    />
+                )} /> */}
+
+                <Route path="/:selectedCountry" extend render={props => (
+                    <Attractions 
+                    {...props}
+                    attractionsList={attractionsList}
+                    isFetching={isFetching}
+                    />
+                )} />
+            </Switch>
+
             <Footer />
         </div>
         )
@@ -86,3 +90,6 @@ export default (App);
 // yarn add redux
 // https://maxfarseer.gitbooks.io/react-router-course-ru/content/dopisivaem_routi.html
 // хорошая статья про роутер
+// https://www.youtube.com/channel/UCqJyAVWwIqPWKEkfCSP1y4Q
+// npm i redux react-redux
+

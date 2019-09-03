@@ -11,8 +11,10 @@ const Sidebar = ( { attractionsList, isFetching} ) => {
         // eslint-disable-next-line react/jsx-pascal-case
         <Сountry 
             key={attraction.id}
-            country={attraction.countryRu}
+            country={attraction.country}
             flag={attraction.flag}
+            countryRu={attraction.countryRu}
+
             >
          </Сountry>
         )): null;
