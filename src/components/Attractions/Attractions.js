@@ -5,19 +5,15 @@ import Spinner from '../UI/Spinner/Spinner';
 import Attraction from './Attraction/Attraction';
 import './Attractions.scss';
 
-const Attractions = ({ attractionsList, isFetching, match}) => {
-    console.log('[isFetching]',isFetching );
+const Attractions = ({ attractionsList, isFetching, match, startPage }) => {
+    console.log('[startPage]', startPage);
+    if (startPage) return (
+        <div className="AttractionsNull"></div>
+    );
 
-
-    
     const selectedCountry = match.params.selectedCountry;
-    const selectedAttractions = attractionsList.find(attraction => attraction.country === selectedCountry);
-
-    console.log('[selectedCountry]', selectedCountry);
-    console.log('[attractionsList]', attractionsList);
-    console.log('[selectedAttractions]', selectedAttractions);
-    const a = selectedAttractions.attractions;
-    console.log('[a]', a);
+    const selectedAttractions = selectedCountry ? attractionsList.find(attraction => attraction.country === selectedCountry): null;
+    const a = selectedAttractions ? selectedAttractions.attractions: null;
 
         const attractions = a ? a.map(attraction => (
             <Attraction 

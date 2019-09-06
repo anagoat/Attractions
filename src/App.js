@@ -14,9 +14,10 @@ class App extends Component {
 
         this.state = {
         searchField: '',
-        isOpen: false,
         attractionsList: attractionsData,
+        isOpen: false,
         isFetching: false,
+        startPage: true
     }
 }
 
@@ -35,14 +36,13 @@ class App extends Component {
             this.setState(( prevState ) => ({
                 attractionsList: attractionsList,
                 isFetching: !prevState.isFetching
-    
             })); 
         }, 100);
 
     }
 
     render () {
-        const { searchField, isFetching, attractionsList} = this.state;
+        const { searchField, isFetching, attractionsList, startPage} = this.state;
 
         return ( 
             <div className="App">
@@ -56,21 +56,22 @@ class App extends Component {
             <Sidebar  attractionsList={attractionsList} />
 
             <Switch>
-            {/* <Route path="" extend render={props => (
-                    <Attractions 
-                    {...props}
-                    attractionsList={attractionsList}
-                    isFetching={isFetching}
-                    />
-                )} /> */}
-
                 <Route path="/:selectedCountry" extend render={props => (
                     <Attractions 
-                    {...props}
-                    attractionsList={attractionsList}
-                    isFetching={isFetching}
+                        {...props}
+                        attractionsList={attractionsList}
+                        isFetching={isFetching}
                     />
                 )} />
+                <Route path="/" extend render={props => (
+                    <Attractions 
+                        {...props}
+                        attractionsList={attractionsList}
+                        isFetching={isFetching}
+                        startPage={startPage}
+                    />
+                )} /> 
+
             </Switch>
 
             <Footer />

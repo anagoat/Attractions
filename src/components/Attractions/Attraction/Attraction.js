@@ -7,7 +7,7 @@ import Button from '../../UI/Button/Button';
 const Attraction = ( { attraction } ) => {
     // const [ {name}, {description}, {picture}, {shortDescription} ] = attractionsList;
     const { name, description, picture,  shortDescription } = attraction;
-    console.log('[attraction]', attraction);
+    // console.log('[attraction]', attraction);
 
 
     return (
