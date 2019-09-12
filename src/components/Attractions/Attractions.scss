@@ -18,15 +18,12 @@
 }
 
 .AttractionsNull {
-    // height: calc(100% - 300px);
-    width: calc(100% - 300px);
-    // height: calc(100% - 100px);
-    // width: 3000px;
-    // height: 1000px;
-    // width: 100%;
-    // height: 100%;
-    opacity: .4;
+    width: calc(100% - 400px);
+    height: 801px;
+    opacity: .7;
     z-index: 1;
-    background-color: rgb(161, 212, 116);
     position: relative;
+    background-image: url(https://i.ytimg.com/vi/18wVDHvOkH4/maxresdefault.jpg);
+    background-repeat: no-repeat;   
+    margin: auto;
 }
