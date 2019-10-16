@@ -1,8 +1,27 @@
 .Attraction {
+    background-image: linear-gradient(to bottom, rgb(243, 233, 178), rgb(245, 225, 49));
+
     .ImageWrapper {
         img {
-            height: 40%;
-            width: 40%;
+            height: 60%;
+            width: 60%;
+            position: relative;
+            left: 20%;
+            border: 1px solid black;
+            box-shadow: 1px 10px 15px rgb(35, 38, 39);
+            border-radius: 15px;
+
+
         }
     }
+
+    border: 1px solid black;
+    box-shadow: 1px 10px 15px rgb(35, 38, 39);
+    margin: 10px;
+    border-radius: 15px;
+    
+    .Button, p, img, h1 {
+        margin: 10px;
+    }
+    
  }

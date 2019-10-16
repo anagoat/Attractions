@@ -1,5 +1,5 @@
 .Attractions {
-    background-color: rgb(167, 177, 158);
+    background-image: linear-gradient(to bottom, rgb(255, 60, 60), rgb(245, 225, 49));
     display: flex;
     height: 100%;
     width: calc(100% - 300px);
@@ -8,12 +8,11 @@
     align-content: space-between;
     padding: 15px;
     margin: 10px;
-    // min-width: 700px;
-    // min-height: 700px;
-    border-radius: 25px;
-    box-shadow: 1px 10px 15px rgb(35, 38, 39);
-    border: 1px solid black;
+    // border-radius: 25px;
+    // box-shadow: 1px 10px 15px rgb(35, 38, 39);
+    // border: 1px solid black;
     z-index: 2;
+    // flex-direction: row; 
 
 }
 
