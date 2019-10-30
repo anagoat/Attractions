@@ -6,7 +6,6 @@ import Attraction from './Attraction/Attraction';
 import './Attractions.scss';
 
 const Attractions = ({ attractionsList, isFetching, match, startPage }) => {
-    console.log('[startPage]', startPage);
     if (startPage) return (
         <div className="AttractionsNull"></div>
     );

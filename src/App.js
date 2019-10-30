@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.scss';
 import  { Route, Switch } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 import Toolbar from './components/Toolbar/Toolbar';
 import Attractions from './components/Attractions/Attractions';
@@ -41,7 +42,16 @@ class App extends Component {
 
     }
 
+    componentDidMount() {
+        this.props.updateSayHello();
+
+        this.setState(prevState => ({
+        isFetching: !prevState.isFetching
+        }))
+    };
+   
     render () {
+        console.log('[this.props.sayHello]', this.props.sayHello);
         const { searchField, isFetching, attractionsList, startPage} = this.state;
 
         return ( 
@@ -80,9 +90,23 @@ class App extends Component {
     }
 }
 
+const mapStateToProps = state => {
+    return {
+        sayHello: state.sayHello
+    };
+};
+
+const mapDispatchToProps = dispatch => {
+    return {
+        updateSayHello: () => dispatch({ type: 'SAY_HELLO' })
+    };
+};
 
 // export default withRouter(wrapper(App));
-export default (App);
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(App);
 
 
 // yarn add react-router-dom

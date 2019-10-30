@@ -1,17 +1,12 @@
 const initialState = {  
-    name: 'Mike',
-    age: 53
+    sayHello : false
 };
 
-const reducer = (state=initialState, action) => {
+const reducer = (state = initialState, action) => {
     switch (action.type) {
-        case 'CHANGE_NAME': 
-            return {
-                ...state,
-                name:action.name
-            };
-
-        default: return state;
+        case 'SAY_HELLO': 
+            return { sayHello : true };
+            default: return state;
     }
 };
 
