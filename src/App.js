@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+ import React, { Component } from 'react';
 import './App.scss';
 import  { Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
@@ -8,6 +8,7 @@ import Attractions from './components/Attractions/Attractions';
 import Sidebar from './components/Sidebar/Sidebar';
 import attractionsData from './assets/data/attractions.json';
 import Footer from './components/Footer/Footer';
+import { updateSayHello } from './store/movies/actions';
 
 class App extends Component {
     constructor(props) {
@@ -99,13 +100,13 @@ class App extends Component {
 
 const mapStateToProps = state => {
     return {
-        sayHello: state.sayHello
+        sayHello: state.movies.sayHello
     };
 };
 
 const mapDispatchToProps = dispatch => {
     return {
-        updateSayHello: () => dispatch({ type: 'SAY_HELLO' })
+        updateSayHello: status => dispatch(updateSayHello(status))
     };
 };
 
@@ -124,12 +125,3 @@ export default connect(
 // хорошая статья про роутер
 // https://www.youtube.com/channel/UCqJyAVWwIqPWKEkfCSP1y4Q
 // npm i redux react-redux
-
-
-
-// 122222222222222
-// 122222222222222
-// 122222222222222
-// 122222222222222
-// 122222222222222
-// 122222222222222
