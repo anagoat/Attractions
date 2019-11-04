@@ -1,5 +1,6 @@
 .Attraction {
-    background-image: linear-gradient(to bottom, rgb(243, 233, 178), rgb(245, 225, 49));
+    padding: 2px;
+    background-color: #35D59D;
 
     .ImageWrapper {
         img {
@@ -24,4 +25,17 @@
         margin: 10px;
     }
     
+    .Button {
+        margin: auto 50%;
+        min-width: 150px;
+         
+        li {
+            list-style-type: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+        
+    }
  }

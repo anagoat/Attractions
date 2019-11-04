@@ -51,7 +51,7 @@ class App extends Component {
     };
    
     render () {
-        console.log('[this.props.sayHello]', this.props.sayHello);
+        // console.log('[this.props.sayHello]', this.props.sayHello);
         const { searchField, isFetching, attractionsList, startPage} = this.state;
 
         return ( 
@@ -73,6 +73,13 @@ class App extends Component {
                         isFetching={isFetching}
                     />
                 )} />
+                {/* <Route path="/:selectedButton" extend render={props => (
+                      <DescAttraction 
+                      {...props}
+                      attractionsList={attractionsList}
+                      />
+                      )} /> */}
+                      
                 <Route path="/" extend render={props => (
                     <Attractions 
                         {...props}
@@ -118,3 +125,11 @@ export default connect(
 // https://www.youtube.com/channel/UCqJyAVWwIqPWKEkfCSP1y4Q
 // npm i redux react-redux
 
+
+
+// 122222222222222
+// 122222222222222
+// 122222222222222
+// 122222222222222
+// 122222222222222
+// 122222222222222

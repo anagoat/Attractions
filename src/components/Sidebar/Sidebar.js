@@ -14,7 +14,6 @@ const Sidebar = ( { attractionsList, isFetching} ) => {
             country={attraction.country}
             flag={attraction.flag}
             countryRu={attraction.countryRu}
-
             >
          </Сountry>
         )): null;
