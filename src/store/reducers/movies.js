@@ -1,15 +1,17 @@
-import * as  actionsTypes  from './actionsTypes';
+import * as  actionsTypes  from '../actionsTypes';
 
 const initialState = {  
     sayHello : false
 };
 
 const updateSayHello = (state, action) => {
-    return {
-        ...state,
-        sayHello : action.status
-    };
-}
+    setTimeout(() => {
+        return {
+            ...state,
+            sayHello : action.status
+        };
+    }, 2000);
+};
 
 const reducer = (state = initialState, action) => {
     switch (action.type) {

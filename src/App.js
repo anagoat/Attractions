@@ -1,4 +1,4 @@
- import React, { Component } from 'react';
+import React, { Component } from 'react';
 import './App.scss';
 import  { Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
@@ -8,7 +8,7 @@ import Attractions from './components/Attractions/Attractions';
 import Sidebar from './components/Sidebar/Sidebar';
 import attractionsData from './assets/data/attractions.json';
 import Footer from './components/Footer/Footer';
-import { updateSayHello } from './store/movies/actions';
+import { updateSayHello } from './store/actions/movies';
 
 class App extends Component {
     constructor(props) {
@@ -44,7 +44,8 @@ class App extends Component {
     }
 
     componentDidMount() {
-        this.props.updateSayHello();
+        console.log('[this.props.updateSayHello]', this.props.updateSayHello);
+        this.props.updateSayHello(true);
 
         this.setState(prevState => ({
         isFetching: !prevState.isFetching
@@ -52,7 +53,6 @@ class App extends Component {
     };
    
     render () {
-        // console.log('[this.props.sayHello]', this.props.sayHello);
         const { searchField, isFetching, attractionsList, startPage} = this.state;
 
         return ( 

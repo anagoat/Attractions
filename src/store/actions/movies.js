@@ -1,4 +1,4 @@
-import { SAY_HELLO } from './actionsTypes';
+import { SAY_HELLO } from '../actionsTypes';
 
 export const updateSayHello = status => {
     return {
