@@ -5,12 +5,12 @@ const initialState = {
 };
 
 const updateSayHello = (state, action) => {
-    setTimeout(() => {
+    // setTimeout(() => {
         return {
             ...state,
             sayHello : action.status
         };
-    }, 2000);
+    // }, 2000);
 };
 
 const reducer = (state = initialState, action) => {
