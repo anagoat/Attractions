@@ -1,11 +1,27 @@
 .App {
-    display: flex;
-    flex-wrap: wrap;
-    background-color: #006F48;
-    // width: 100%;
-    // max-height: 1000px;
-    // max-height: 3000px;
-    height:100vh;
-    height: 100%;
-    position: relative;
+    display: grid;
+    grid-template-areas:
+    "Toolbar Toolbar Toolbar"
+    "Sidebar Attractions Attractions"
+    "Footer Footer Footer";
+    grid-template-columns: 10% 1fr;
+    grid-template-rows: 5% 1fr 5%;
+    height: 100vh;
+
+    .Toolbar {
+            grid-area: Toolbar;
+    }
+
+    .Sidebar {
+        grid-area: Sidebar;
+    }
+
+    .Attractions {
+        grid-area: Attractions;
+    }
+
+    .Footer {
+        grid-area: Footer;
+    }
+
 }

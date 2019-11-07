@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Spinner from '../UI/Spinner/Spinner';
+// import Spinner from '../UI/Spinner/Spinner';
 import Attraction from './Attraction/Attraction';
 import './Attractions.scss';
 
@@ -22,7 +22,8 @@ const Attractions = ({ attractionsList, isFetching, match, startPage }) => {
             )): null;
     return ( 
         <div className="Attractions">
-            { isFetching && <Spinner /> }
+            {/* { isFetching && <Spinner /> } */}
+            { isFetching  }
             {attractions}                       
         </div>
     );

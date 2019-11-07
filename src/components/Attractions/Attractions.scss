@@ -1,28 +1,4 @@
 .Attractions {
-    background-color:#006F48;
-    display: flex;
-    height: 100%;
-    width: calc(100% - 300px);
-    flex-direction: column;
-    position: relative;
-    align-content: space-between;
-    padding: 15px;
-    margin: 10px;
-    // border-radius: 25px;
-    // box-shadow: 1px 10px 15px rgb(35, 38, 39);
-    // border: 1px solid black;
-    z-index: 2;
-    // flex-direction: row; 
-
-}
-
-.AttractionsNull {
-    width: calc(100% - 400px);
-    height: 801px;
-    opacity: .7;
-    z-index: 1;
-    position: relative;
-    background-image: url(https://i.ytimg.com/vi/18wVDHvOkH4/maxresdefault.jpg);
-    background-repeat: no-repeat;   
-    margin: auto;
+    background-color: green;
+    overflow-y: scroll;
 }

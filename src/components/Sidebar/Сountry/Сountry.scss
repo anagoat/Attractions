@@ -1,20 +1,8 @@
 .Сountry {
-    margin: 5px;
-
-    .Flag {
-        height: 60%;
-        width: 60%;
-        border: 1px solid black;
-        float: left;
-    }
-
-    a {
-        color: rgb(88, 6, 240);
-        text-decoration: none;
-    }
-    
-    li {
-        list-style-type: none;
+    // background-color: blue;
+    img {
+        max-width: 150px;
+        max-height: 150px;
     }
 }
 
