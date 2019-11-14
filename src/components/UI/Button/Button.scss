@@ -1,2 +1,16 @@
  .Button {
+     border: 1px solid black;
+     border-radius: 5%;
+     text-align: center;
+     background-image: linear-gradient(to top, rgb(214, 221, 174), rgb(221, 236, 82));
+     min-width: 120px;
+     min-height: 40px;
+     
+    a { 
+        text-decoration: none;
+      }
+      
+      li {
+        list-style-type: none;
+      }
 }

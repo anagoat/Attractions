@@ -1,3 +1,17 @@
 .Sidebar {
     background-color: royalblue;
+    display: grid;
+    justify-content: center;
+
+    li {
+        list-style-type: none;
+    }
+
+    p {
+        text-align: center;
+    }
+    
+    a {
+        text-decoration: none;
+    }
 }

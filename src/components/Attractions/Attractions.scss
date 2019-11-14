@@ -1,4 +1,8 @@
 .Attractions {
     background-color:rgb(9, 241, 160);
     overflow-y: scroll;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 10px
+
 }
