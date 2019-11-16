@@ -8,60 +8,30 @@ import Attractions from './components/Attractions/Attractions';
 import Sidebar from './components/Sidebar/Sidebar';
 import attractionsData from './assets/data/attractions.json';
 import Footer from './components/Footer/Footer';
-import { updateSayHello } from './store/actions/movies';
+import { fetchAttractions } from './store/actions/movies';
 
 class App extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
-        searchField: '',
-        attractionsList: attractionsData,
-        isOpen: false,
-        isFetching: false,
-        startPage: true
     }
 }
 
-    onChangeHandler = event => {
-        this.setState({ searchField: event.target.value });
-    }
-
-    fetchShowplaceHandler = () => {
-        this.setState(( prevState ) => ({
-            isFetching: !prevState.isFetching
-        }));
-
-        const attractionsList = attractionsData;
-
-        setTimeout(() => {
-            this.setState(( prevState ) => ({
-                attractionsList: attractionsList,
-                isFetching: !prevState.isFetching
-            })); 
-        }, 100);
-
-    }
-
     componentDidMount() {
-        console.log('[this.props.updateSayHello]', this.props.updateSayHello);
-        this.props.updateSayHello(true);
-
-        this.setState(prevState => ({
-        isFetching: !prevState.isFetching
-        }))
+        fetchAttractions();
     };
-   
     render () {
-        const { searchField, isFetching, attractionsList, startPage} = this.state;
-
+        const { searchField,  startPage} = this.state;
+        const { isFetching, attractionsList} = this.props;
+        
         return ( 
             <div className="App">
             <Toolbar 
                 search = {searchField}
                 isFetching={isFetching}
                 changed={this.onChangeHandler}
-                clicked={this.fetchShowplaceHandler}
+                clicked={() => fetchAttractions(searchField)}
             />
 
             <Sidebar  attractionsList={attractionsList} />
@@ -74,12 +44,6 @@ class App extends Component {
                         isFetching={isFetching}
                     />
                 )} />
-                {/* <Route path="/:selectedButton" extend render={props => (
-                      <DescAttraction 
-                      {...props}
-                      attractionsList={attractionsList}
-                      />
-                      )} /> */}
                       
                 <Route path="/" extend render={props => (
                     <Attractions 
@@ -100,13 +64,14 @@ class App extends Component {
 
 const mapStateToProps = state => {
     return {
-        sayHello: state.movies.sayHello
+        attractionsList: state.movies.attractionsList,
+        isFetching: state.movies.isFetching
     };
 };
 
 const mapDispatchToProps = dispatch => {
     return {
-        updateSayHello: status => dispatch(updateSayHello(status))
+        fetchAttractions: () => dispatch(fetchAttractions())
     };
 };
 

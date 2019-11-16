@@ -1,21 +1,30 @@
 import * as  actionsTypes  from '../actionsTypes';
+import attractionsData from '../../assets/data/attractions.json';
+
 
 const initialState = {  
-    sayHello : false
+    isFetching: false,
+    attractionsList: attractionsData
 };
 
-const updateSayHello = (state, action) => {
-    // setTimeout(() => {
+const toggleLoading = (state, action) => {
         return {
             ...state,
-            sayHello : action.status
+            isFetching : action.status
         };
-    // }, 2000);
+};
+
+const setAttractionsList = (state, action) => {
+        return {
+            ...state,
+            attractionsList : action.attractions
+        };
 };
 
 const reducer = (state = initialState, action) => {
     switch (action.type) {
-        case actionsTypes.SAY_HELLO: return updateSayHello(state, action);
+        case actionsTypes.TOGGLE_LOADING: return toggleLoading(state, action);
+        case actionsTypes.SET_ATTRACTIONS_LIST: return setAttractionsList(state, action);
         default: return state;
     }
 }; 

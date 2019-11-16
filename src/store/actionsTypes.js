@@ -1,1 +1,2 @@
-export const SAY_HELLO = 'SAY_HELLO';
+export const TOGGLE_LOADING = 'TOGGLE_LOADING';
+export const SET_ATTRACTIONS_LIST = 'SET_ATTRACTIONS_LIST';

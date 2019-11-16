@@ -22,8 +22,8 @@ const Attractions = ({ attractionsList, isFetching, match, startPage }) => {
             )): null;
     return ( 
         <div className="Attractions">
-            { isFetching  }
-            {/* { isFetching && <Spinner /> } */}
+            {/* { isFetching  } */}
+            { isFetching && <Spinner /> }
             {attractions}                       
         </div>
     );
