@@ -8,6 +8,7 @@ import Attractions from './components/Attractions/Attractions';
 import Sidebar from './components/Sidebar/Sidebar';
 import attractionsData from './assets/data/attractions.json';
 import Footer from './components/Footer/Footer';
+import Auth from './components/Auth/Auth';
 import { fetchAttractions } from './store/actions/movies';
 
 class App extends Component {
@@ -15,9 +16,13 @@ class App extends Component {
         super(props);
 
         this.state = {
+            searchField: ''
+        }
     }
-}
 
+    onChangeHandler = event => {
+        this.setState({ searchField: event.target.value });
+    }
     componentDidMount() {
         fetchAttractions();
     };
@@ -37,22 +42,25 @@ class App extends Component {
             <Sidebar  attractionsList={attractionsList} />
 
             <Switch>
+                <Route path="/auth" component={Auth} /> 
+                
                 <Route path="/:selectedCountry" extend render={props => (
                     <Attractions 
-                        {...props}
-                        attractionsList={attractionsList}
-                        isFetching={isFetching}
+                    {...props}
+                    attractionsList={attractionsList}
+                    isFetching={isFetching}
                     />
-                )} />
+                    )} />
+
                       
                 <Route path="/" extend render={props => (
                     <Attractions 
-                        {...props}
-                        attractionsList={attractionsList}
-                        isFetching={isFetching}
-                        startPage={startPage}
+                    {...props}
+                    attractionsList={attractionsList}
+                    isFetching={isFetching}
+                    startPage={startPage}
                     />
-                )} /> 
+                    )} /> 
 
             </Switch>
 
@@ -90,3 +98,4 @@ export default connect(
 // хорошая статья про роутер
 // https://www.youtube.com/channel/UCqJyAVWwIqPWKEkfCSP1y4Q
 // npm i redux react-redux
+// https://uigradients.com/

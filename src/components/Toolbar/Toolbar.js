@@ -6,7 +6,8 @@ import Button from '../UI/Button/Button';
 import Input from '../UI/Input/Input';
 
 const Toolbar = ( { search, isFetching, changed, clicked } ) => (
-        <div className="Toolbar">
+
+    <div className="Toolbar">
             <Input 
                 placeholder="Search..."
                 value={search}
