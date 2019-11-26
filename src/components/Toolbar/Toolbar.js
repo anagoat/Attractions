@@ -9,6 +9,7 @@ const Toolbar = ( { search, isFetching, changed, clicked } ) => (
 
     <div className="Toolbar">
             <Input 
+                name="seatchField"
                 placeholder="Search..."
                 value={search}
                 onChangeHandler={changed}

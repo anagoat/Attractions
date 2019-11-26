@@ -1,36 +1,51 @@
 import React from 'react';
+import propTypes from 'prop-types';
 
 import Input from '../UI/Input/Input';
 import Button from '../UI/Button/Button';
 import './Auth.scss';
 
-const Auth = () => {
+const Auth = ({ email, password, mode, onChangeHandler, switchModeHandler, onSubmitHandler, onBlurHandler}) => {
     return (
         <div className="Auth">
-            <form>
-                <h2>Sign Up</h2>
+            <form onSubmit= {onSubmitHandler}>
+                <h2>{ mode === 'signup' ? 'Sign Up' : 'Sign In'}</h2>
             
                 <Input 
-                    type="text"
+                    name="email"
                     placeholder="E-mail"
-                    value=""
-                    onChange= {() => {}}    
+                    value={email}
+                    onChangeHandler={onChangeHandler}    
+                    onBlurHandler={onBlurHandler}  
                     />      
 
                 <Input 
+                    name="password"
                     type="password"
                     placeholder="Password"
-                    value=""
-                    onChange= {() => {}}    
+                    value={password}
+                    onChangeHandler={onChangeHandler}  
+                    onBlurHandler={onBlurHandler}  
                     />      
 
-                <Button type="submit"> Sign Up </Button>
+                <Button type="submit"> { mode === 'signup' ? 'Sign Up' : 'Sign In'} </Button>
 
-                <span>Switch to Sign In</span>
+                <span onClick={switchModeHandler}>
+                    Switch to { mode === 'signup' ? 'Sign Up' : 'Sign In'}
+                </span>
 
             </form>
         </div>
     );
 };
+
+Auth.propTypes = {
+    email: propTypes.string.isRequired,
+    mode: propTypes.string.isRequired,
+    password: propTypes.string.isRequired,
+    onChangeHandler: propTypes.func.isRequired,
+    switchModeHandler: propTypes.func.isRequired,
+    onSubmitHandler: propTypes.func.isRequired,
+}
 
 export default Auth;

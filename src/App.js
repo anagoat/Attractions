@@ -16,18 +16,49 @@ class App extends Component {
         super(props);
 
         this.state = {
-            searchField: ''
+            searchField: '',
+            email: '',
+            password: '',
+            mode: 'signup'
         }
     }
 
-    onChangeHandler = event => {
-        this.setState({ searchField: event.target.value });
+    onChangeHandler = e => {
+        this.setState({ [e.target.name]: e.target.value });
     }
+
+    onBlurHandler = e => {
+        console.log('%c[BLUR]', 'color: orange');
+        console.log('[e.target]', e.target);
+    }
+    
+
     componentDidMount() {
         fetchAttractions();
     };
+
+    onSubmitHandler = e => {
+        e.preventDefault();
+
+        const { email, password } = this.state;
+
+        const submitedData = {
+            email,
+            password
+        }
+
+        console.log('%c[SUBMITTED]', 'color: green; font-sty: italic;');
+        console.log( JSON.stringify(submitedData, null, 2));
+    }
+
+    switchModeHandler =() => {
+        this.setState(prevState => ({
+            mode: prevState.mode === 'signup' ? 'signin' : 'signup'
+        }))
+    }
+
     render () {
-        const { searchField,  startPage} = this.state;
+        const { searchField,  startPage, email, password, mode} = this.state;
         const { isFetching, attractionsList} = this.props;
         
         return ( 
@@ -37,12 +68,25 @@ class App extends Component {
                 isFetching={isFetching}
                 changed={this.onChangeHandler}
                 clicked={() => fetchAttractions(searchField)}
+                
             />
 
             <Sidebar  attractionsList={attractionsList} />
 
             <Switch>
-                <Route path="/auth" component={Auth} /> 
+                <Route path="/auth" render={props => (
+                    <Auth
+                        {...props}    
+                        email={email}
+                        password={password}
+                        mode={mode}
+                        onChangeHandler={this.onChangeHandler}
+                        onSubmitHandler={this.onSubmitHandler}
+                        switchModeHandler={this.switchModeHandler}
+                        onBlurHandler={this.onBlurHandler}
+                    />
+
+                )} /> 
                 
                 <Route path="/:selectedCountry" extend render={props => (
                     <Attractions 
